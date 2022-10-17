@@ -1,0 +1,17 @@
+{
+  "name": "spotify-node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "node-fetch": "^3.2.10"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r dotenv/config index.js"
+  },
+  "author": "James Bannister",
+  "license": "ISC",
+  "description": "",
+  "type": "module"
+}
