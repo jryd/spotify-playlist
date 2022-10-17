@@ -7,6 +7,24 @@ shared playlist.
 
 ## Installation / Running
 
+I wasn't sure what the "best" was to run lambda functions locally.
+
+Whilst the `index.js` file represents how this would look in a Lambda function, to run it locally, I was editing the
+`index.js` file to provide a hardcoded user object and updating the function to be an anonymous function that I then 
+invoked.
+
+```javascript
+import { addTracksToPlaylist, fetchTopTracksFor } from './spotify.js';
+
+(async () => {
+  const user = {likes: [{id: '0JXDwBs1sEp6UKoAP58UdF'}]};
+
+  const topTracks = await fetchTopTracksFor(user);
+
+  await addTracksToPlaylist(topTracks.map(track => track.uri));
+})();
+```
+
 1. Clone the repo
 2. `cd spotify-node`
 3. `npm install`
